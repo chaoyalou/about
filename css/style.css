@@ -1,0 +1,1806 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+    font-style: normal
+}
+
+/* 去掉li 的小圆点 */
+li {
+    list-style: none
+}
+
+img {
+    /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle
+}
+
+
+
+a {
+    /* color: #666; */
+    text-decoration: none
+}
+
+
+
+button,
+input {
+    outline: none;
+    /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif
+}
+
+
+
+/* 隐藏*/
+.hide,
+.none {
+    display: none
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.w {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Microsoft JhengHei;
+
+
+    background-color: #eaeaea;
+}
+
+/* 关于我们部分 */
+.container {
+    position: relative;
+    background: url(../images/cyl-top-bgrond.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    padding-top: 120px;
+    height: 930px;
+    text-align: center;
+}
+
+.about-title {
+    position: relative;
+    font-size: 40px;
+    color: #333333;
+    text-align: center;
+    font-weight: 600;
+}
+
+.about-title::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 370px;
+    display: inline-block;
+    height: 2px;
+    width: 60px;
+    background-color: #333;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 670px;
+    display: inline-block;
+    height: 2px;
+    width: 60px;
+    background-color: #333;
+}
+
+.container .about P:nth-of-type(1) {
+    font-size: 14px;
+    font-weight: 600;
+
+    margin: 35px 0;
+}
+
+.container .about P:nth-of-type(2) {
+    font-size: 14px;
+
+    line-height: 30px;
+}
+
+.container .about-travel {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -600px;
+    text-align: center;
+
+
+
+}
+
+.container .about-travel li:nth-child(1) {
+    float: left;
+   
+}
+
+.container .about-travel li:nth-child(2) {
+    float: left;
+
+
+
+}
+
+.container .about-travel li {
+    margin-left: 150px;
+    width: 380px;
+}
+
+.container .about-travel li h4 {
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+    margin: 24px 0;
+}
+
+.container .about-travel li p {
+    font-size: 14px;
+    color: #333;
+    line-height: 2em;
+}
+
+/* 第二行部分3个变化盒子 */
+.column ul li {
+    width: 330px;
+    height: 230px;
+    float: left;
+    box-sizing: border-box;
+    background: #fff;
+    margin-right: 55px;
+}
+
+.column ul li:hover {
+    background: #82ba35;
+    color: #fff;
+}
+
+.column ul li:last-child {
+    margin-right: 0;
+}
+
+.column ul:nth-of-type(1) {
+    margin: 80px auto;
+}
+
+.column .w li {
+    text-align: center;
+    transition: all 0.3s;
+    padding: 0 18px;
+    background: #fff;
+}
+
+.column .w li h4 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.column .w li p {
+    font-size: 14px;
+    margin-top: 20px;
+    line-height: 1.8em;
+}
+
+.column .w li div {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    /* background-color: #ccc; */
+    margin: 20px auto;
+}
+
+/* 定义动画 */
+@keyframes action {
+    0% {
+
+        transform: scale(0);
+    }
+
+    25% {
+
+        transform: scale(1.1, .8);
+    }
+
+    50% {
+        transform: scale(0.9, 1.1);
+    }
+
+    75% {
+        transform: scale(1.1, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 第一个盒子 */
+
+.column .w li:nth-of-type(1) div .bef {
+    visibility: visible;
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: url(../images/cyl-column-left\ -1.png) no-repeat;
+}
+
+.column .w li:nth-of-type(1) div .next {
+
+    visibility: hidden;
+
+}
+
+.column .w li:nth-of-type(1):hover div .bef {
+    visibility: hidden;
+
+}
+
+.column .w li:nth-of-type(1):hover div .next {
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: visible;
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: url(../images/cyl-column-left\ -2.png) no-repeat;
+    animation: action 0.5s ease;
+}
+
+/* 第二个盒子 */
+
+.column .w li:nth-of-type(2) div .bef {
+    visibility: visible;
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: url(../images/cyl-column-center\ -1.png) no-repeat;
+}
+
+.column .w li:nth-of-type(2) div .next {
+
+    visibility: hidden;
+
+}
+
+.column .w li:nth-of-type(2):hover div .bef {
+    visibility: hidden;
+
+}
+
+.column .w li:nth-of-type(2):hover div .next {
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: visible;
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: url(../images/cyl-column-center\ -2.png) no-repeat;
+    animation: action 0.5s ease;
+}
+
+
+
+/* 第三个盒子 */
+
+.column .w li:nth-of-type(3) div .bef {
+    visibility: visible;
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: url(../images/cyl-column-right\ -1.png) no-repeat;
+}
+
+.column .w li:nth-of-type(3) div .next {
+
+    visibility: hidden;
+
+}
+
+.column .w li:nth-of-type(3):hover div .bef {
+    visibility: hidden;
+
+}
+
+.column .w li:nth-of-type(3):hover div .next {
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: visible;
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: url(../images/cyl-column-right\ -2.png) no-repeat;
+    animation: action 0.5s ease;
+}
+
+/* 发展历程 */
+.history {
+    background: #fff;
+    height: 740px;
+
+}
+
+
+
+.history .w h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 40px;
+    color: #333;
+}
+
+.history .row h2::before {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 370px;
+    display: inline-block;
+    height: 2px;
+    width: 60px;
+    background-color: #333;
+}
+
+.history .row h2::after {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 670px;
+    display: inline-block;
+    height: 2px;
+    width: 60px;
+    background-color: #333;
+}
+
+
+
+.history .w ul li {
+    float: left;
+    height: 405px;
+    width: 317px;
+    box-sizing: border-box;
+    margin: 0 25px;
+
+
+}
+
+.history .w ul li:nth-last-of-type(1) {
+    margin-right: 0;
+}
+
+.history ul li .history-item {
+    position: relative;
+    padding: 20px;
+    width: 317px;
+    height: 392px;
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, .2) 0px 0px 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+
+}
+
+.history .w .banner .colm-one {
+    margin-left: 57px;
+}
+
+.history .w .banner .colm-two {
+    margin-left: 85px;
+}
+
+.history .w .banner .colm-three {
+    margin-left: 65px;
+}
+
+.history .w .banner li .history-item p {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 20px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8em;
+}
+
+.history .w .banner li .history-item p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #82ba35;
+}
+
+
+.history .w ul li .history-item p:nth-child(n-2) {
+    margin-bottom: 20px;
+}
+
+.history .w ul li .history-item i img {
+    position: absolute;
+    bottom: 15px;
+    width: 87%;
+    box-shadow: 0px -70px 10px 14px rgb(255 255 255 / 95%);
+
+
+}
+
+.history .row ul li h4 {
+    position: relative;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.history .w ul li h4::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -2px;
+    bottom: -30px;
+    width: 4px;
+    height: 10px;
+    background-color: #82ba35;
+
+}
+
+.history .row {
+    position: relative;
+    height: 740px;
+    width: 1165px;
+    overflow: hidden;
+
+
+
+}
+
+.history .row:after {
+    content: '';
+    position: absolute;
+    top: 235px;
+    right: 45px;
+    width: 1060px;
+    height: 4px;
+    background-color: #82ba35;
+}
+
+.history .row::before {
+    content: '';
+    position: absolute;
+    top: 227px;
+    right: 22px;
+    width: 0px;
+    height: 0px;
+    border: 10px solid transparent;
+    border-left: 15px solid#82ba35;
+}
+
+
+.history .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3300px;
+    margin-top: 150px;
+
+}
+
+.history .banner::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: 81px;
+    left: 50px;
+    background-color: #82ba35;
+}
+
+
+
+.history .banner .history-item a {
+    position: absolute;
+    left: 38px;
+    bottom: 205px;
+    font-size: 14px;
+    color: #82ba35;
+    z-index: 1;
+}
+
+.history .banner .history-item a::after {
+    content: '';
+    font-family: 'iconfont';
+    content: '\e607';
+    color: #82ba35;
+    font-size: 14px;
+}
+
+.history .fix {
+    position: relative;
+}
+
+
+
+/* 轮播小点 */
+.controls-visible {
+    position: absolute;
+    bottom: -150px;
+    left: 540px;
+    height: 20px;
+    width: 64px;
+
+}
+
+.controls-visible label {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    padding: 2px;
+    margin-right: 2px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid #82ba35;
+}
+
+.banner input[type='radio']:nth-of-type(1):checked~.controls-visible label:nth-of-type(1) {
+    background-color: #82ba35;
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~.controls-visible label:nth-of-type(2) {
+    background-color: #82ba35;
+}
+
+.banner input[type='radio']:nth-of-type(3):checked~.controls-visible label:nth-of-type(3) {
+    background-color: #82ba35;
+}
+
+.banner input[type='radio']:nth-of-type(1):checked~li {
+    transform: translateX(0);
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~li {
+    transform: translateX(-1160px);
+}
+
+.banner input[type='radio']:nth-of-type(3):checked~li {
+    transform: translateX(-2300px);
+}
+
+.history .w .banner li {
+    transition: all 0.5s;
+}
+
+.banner input[type='radio'] {
+    float: left;
+    display: none;
+}
+
+/* 定义放置箭头里的label的容器 */
+.history .fix .row .banner .prev i {
+    display: inline-block;
+    width: 110px;
+    height: 69px;
+
+
+}
+
+.history .fix .row .banner .prev label {
+    float: left;
+    width: 35px;
+    height: 69px;
+    cursor: pointer;
+
+
+}
+
+
+
+/* 鼠标点击，盒子中的label变换位置。从而点击不重复。 */
+/* -------------左箭头------------ */
+.banner input[type='radio']:nth-of-type(1):checked~.prev label:nth-of-type(1) {
+    transform: translateX(70px);
+}
+
+.banner input[type='radio']:nth-of-type(1):checked~.prev label:nth-of-type(2),
+.banner input[type='radio']:nth-of-type(1):checked~.prev label:nth-of-type(3) {
+    transform: translateX(-35px);
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~.prev label:nth-of-type(3) {
+    transform: translateX(-70px);
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~.prev label:nth-of-type(2) {
+    transform: translateX(0px);
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~.prev label:nth-of-type(1) {
+    transform: translateX(70px);
+}
+
+/* -----------右箭头------------------- */
+.banner input[type='radio']:nth-of-type(1):checked~.next label:nth-of-type(1) {
+    transform: translateX(70px);
+}
+
+.banner input[type='radio']:nth-of-type(1):checked~.next label:nth-of-type(2),
+.banner input[type='radio']:nth-of-type(1):checked~.next label:nth-of-type(3) {
+    transform: translateX(-35px);
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~.next label:nth-of-type(3) {
+    transform: translateX(-70px);
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~.next label:nth-of-type(2) {
+    transform: translateX(0px);
+}
+
+.banner input[type='radio']:nth-of-type(2):checked~.next label:nth-of-type(1) {
+    transform: translateX(70px);
+}
+
+
+
+.history .fix .row .banner .prev {
+    position: absolute;
+    top: 270px;
+    left: 10px;
+    width: 35px;
+    height: 69px;
+    background: url(../images/cyl-zuojiantou1.png) no-repeat center center;
+    overflow: hidden;
+
+}
+
+.history .fix .row .banner .prev:hover {
+    position: absolute;
+    top: 270px;
+    left: 10px;
+    width: 35px;
+    height: 69px;
+    background: url(../images/cyl-zuojiantou2.png) no-repeat center center;
+    background-size: cover;
+
+
+}
+
+.history .fix .row .banner .next i {
+    display: inline-block;
+    width: 110px;
+    height: 69px;
+
+
+}
+
+.history .fix .row .banner .next label {
+    float: left;
+    width: 35px;
+    height: 69px;
+    cursor: pointer;
+
+
+}
+
+
+
+.history .fix .row .banner .next {
+    position: absolute;
+    top: 270px;
+    right: 65%;
+    width: 35px;
+    height: 69px;
+    background: url(../images/cyl-youjiantou1.png) no-repeat center center;
+    overflow: hidden;
+
+}
+
+.history .fix .row .banner .next:hover {
+    position: absolute;
+    top: 270px;
+    right: 65%;
+    width: 35px;
+    height: 69px;
+    background: url(../images/cyl-youjiantou2.png) no-repeat center center;
+
+
+
+}
+
+/* 团队介绍板块 */
+.team-introduction {
+    position: relative;
+    height: 841px;
+    background: url(../images/cyl-team-background.jpg)no-repeat fixed center;
+    background-size: 100%;
+
+
+}
+
+.team-introduction::before {
+    content: '';
+    width: 100%;
+    /* height: 841px; */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 0;
+}
+
+.team-introduction h2 {
+    position: relative;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    margin: 30px auto;
+
+}
+
+.team-introduction h2::before {
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 3px;
+    top: 50%;
+    margin-top: -1.5px;
+    left: 50%;
+    margin-left: -170px;
+    background-color: #fff;
+}
+
+.team-introduction h2::after {
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 3px;
+    top: 50%;
+    margin-top: -1.5px;
+    left: 50%;
+    margin-left: 110px;
+    background-color: #fff;
+}
+
+.control-box {
+    position: relative;
+    overflow: hidden;
+    width: 1260px;
+    height: 800px;
+    border-top: 1px solid transparent;
+    margin: 0 auto;
+  
+}
+
+.team-introduction .control-box ul {
+    position: relative;
+    width: 7500px;
+    height: 490px;
+    box-sizing: border-box;
+}
+
+.team-introduction .control-box ul li {
+    position: relative;
+    width: 1100px;
+    float: left;
+    box-sizing: border-box;
+    margin: 0 75px;
+
+}
+
+.team-introduction .control-box ul li img {
+
+    width: 100%;
+}
+
+
+.team-introduction .control-box ul li span {
+
+    position: absolute;
+    width: 500px;
+    height: 87px;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -250px;
+    font-size: 18px;
+    line-height: 87px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+}
+
+.team-introduction .control-box .ulcontrol {
+    position: absolute;
+    left: 50%;
+    margin-left: -110px;
+    bottom: 150px;
+    width: 230px;
+    height: 40px;
+    background-color: pink;
+    border-radius: 20px;
+}
+
+.team-introduction .control-box .ulcontrol label:first-of-type {
+    position: absolute;
+    left: 0;
+
+    bottom: 0;
+    width: 115px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 20px 0 0 20px;
+}
+
+.team-introduction .control-box .ulcontrol label:first-of-type:hover {
+    color: #fff;
+    background-color: #82ba35;
+}
+
+.team-introduction .control-box .ulcontrol label:last-of-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 115px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 0 20px 20px 0;
+}
+
+.team-introduction .control-box .ulcontrol label:last-of-type:hover {
+    color: #fff;
+    background-color: #ff4f3b;
+}
+
+/* 隐藏外部radio */
+.team-introduction .control-box input[name='check'] {
+    visibility: hidden;
+}
+
+
+/* 第二个ul */
+.team-introduction .control-box ul:nth-of-type(2) li span {
+
+    position: absolute;
+    width: 500px;
+    height: 87px;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -250px;
+    font-size: 18px;
+    line-height: 87px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+}
+
+/* 外部控制 */
+.team-introduction .control-box input[type='radio']:first-of-type:checked~.ulcontrol label:first-of-type {
+    color: #fff;
+    background-color: #82ba35;
+}
+
+.team-introduction .control-box input[type='radio']:last-of-type:checked~.ulcontrol label:last-of-type {
+    color: #fff;
+    background-color: #ff4f3b;
+}
+
+.team-introduction .control-box input[type='radio']:first-of-type {
+    position: absolute;
+    left: 50%;
+    top: 180px;
+    z-index: 3;
+}
+
+.team-introduction .control-box input[type='radio']:last-of-type {
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    top: 180px;
+    z-index: 3;
+}
+
+.team-introduction .control-box .ul-right {
+    position: absolute;
+    /* width: 3000px; */
+
+    top: 117px;
+
+}
+
+.team-introduction .control-box input[type='radio']:first-of-type:checked~.ul-left {
+    visibility: visible;
+}
+
+.team-introduction .control-box input[type='radio']:first-of-type:checked~.ul-right {
+    visibility: hidden;
+}
+
+.team-introduction .control-box input[type='radio']:last-of-type:checked~.ul-left {
+    visibility: hidden;
+}
+
+.team-introduction .control-box input[type='radio']:last-of-type:checked~.ul-right {
+    visibility: visible;
+}
+
+/* 内部控制 */
+.team-introduction .control-box .ul-left {
+    position: relative;
+}
+
+/* 内部左边radio样式，后续隐藏 */
+.team-introduction .control-box .ul-left input[name='check-left'] {
+    position: absolute;
+    left: 30px;
+    top: 250px;
+    z-index: 5;
+    visibility: hidden;
+
+}
+
+
+
+/* 内部左边label样式，头像样式 */
+.team-introduction .control-box .ul-left .controlleft {
+    position: absolute;
+    bottom: -170px;
+    left: 380px;
+    width: 400px;
+    height: 50px;
+    /* background-color: #82ba35; */
+}
+
+.team-introduction .control-box .ul-left .controlleft label {
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: pink; */
+    box-sizing: border-box;
+    margin-left: 16px;
+    overflow: hidden;
+
+}
+
+.team-introduction .control-box .ul-left .controlleft label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.team-introduction .control-box .ul-left .controlleft label:nth-last-of-type(1) {
+    background: url(../images/cyl-left-touxiang1.jpg) no-repeat center;
+    background-size: cover;
+
+}
+
+.team-introduction .control-box .ul-left .controlleft label:nth-last-of-type(2) {
+    background: url(../images/cyl-left-touxiang2.jpg) no-repeat center;
+    background-size: cover;
+
+}
+
+.team-introduction .control-box .ul-left .controlleft label:nth-last-of-type(3) {
+    background: url(../images/cyl-left-touxiang3.jpg) no-repeat center;
+    background-size: cover;
+
+}
+
+.team-introduction .control-box .ul-left .controlleft label:nth-last-of-type(4) {
+    background: url(../images/cyl-left-touxiang4.jpg) no-repeat center;
+    background-size: cover;
+
+}
+
+.team-introduction .control-box .ul-left .controlleft label:nth-last-of-type(5) {
+    background: url(../images/cyl-left-touxiang5.jpg) no-repeat center;
+    background-size: cover;
+
+}
+
+.team-introduction .control-box .ul-left .controlleft label:nth-last-of-type(6) {
+    background: url(../images/cyl-left-touxiang6.jpg) no-repeat center;
+    background-size: cover;
+
+}
+
+/* 点击之后左边行之悦大图切换 */
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(1):checked~li {
+    transform: translateX(0);
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(2):checked~li {
+    transform: translateX(-1250px);
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(3):checked~li {
+    transform: translateX(-2500px);
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(4):checked~li {
+    transform: translateX(-3750px);
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(5):checked~li {
+    transform: translateX(-5000px);
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(6):checked~li {
+    transform: translateX(-6250px);
+}
+
+/* 点击之后左边行之悦头像变换 */
+/* 第一个头像 */
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(1):checked~.controlleft label:nth-last-of-type(1) {
+    border: 3px solid #82ba35;
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(1):checked~.controlleft label:nth-last-of-type(1):before {
+    opacity: 0;
+}
+
+/* 第二个头像 */
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(2):checked~.controlleft label:nth-last-of-type(2) {
+    border: 3px solid #82ba35;
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(2):checked~.controlleft label:nth-last-of-type(2):before {
+    opacity: 0;
+}
+
+/* 第三个头像 */
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(3):checked~.controlleft label:nth-last-of-type(3) {
+    border: 3px solid #82ba35;
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(3):checked~.controlleft label:nth-last-of-type(3):before {
+    opacity: 0;
+}
+
+/* 第四个头像 */
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(4):checked~.controlleft label:nth-last-of-type(4) {
+    border: 3px solid #82ba35;
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(4):checked~.controlleft label:nth-last-of-type(4):before {
+    opacity: 0;
+}
+
+/* 第五个头像 */
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(5):checked~.controlleft label:nth-last-of-type(5) {
+    border: 3px solid #82ba35;
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(5):checked~.controlleft label:nth-last-of-type(5):before {
+    opacity: 0;
+}
+
+/* 第六个头像 */
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(6):checked~.controlleft label:nth-last-of-type(6) {
+    border: 3px solid #82ba35;
+}
+
+.team-introduction .control-box .ul-left input[type='radio']:nth-last-of-type(6):checked~.controlleft label:nth-last-of-type(6):before {
+    opacity: 0;
+}
+
+/* 第二个ul博乐橙 */
+
+/* 让第二个ul的radio显示，后续隐藏 */
+/* .team-introduction .control-box .ul-right {
+    position: relative;
+} */
+
+.team-introduction .control-box .ul-right input[name='check-right']:first-of-type {
+    position: absolute;
+    top: 400px;
+    left: 500px;
+    visibility: hidden;
+}
+
+.team-introduction .control-box .ul-right input[name='check-right']:nth-of-type(2) {
+    position: absolute;
+    top: 400px;
+    left: 550px;
+    visibility: hidden;
+}
+
+
+/* 定位controlright */
+.team-introduction .control-box .ul-right .controlright {
+    position: absolute;
+    bottom: -168px;
+    left: 400px;
+    width: 140px;
+    height: 50px;
+
+}
+
+.team-introduction .control-box .ul-right .controlright label {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin-right: 20px;
+    
+
+}
+
+.team-introduction .control-box .ul-right .controlright label::before {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .4);
+}
+
+.team-introduction .control-box .ul-right .controlright label:first-of-type {
+    background: url(../images/cyl-right-touxiang1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.team-introduction .control-box .ul-right .controlright label:last-of-type {
+    background: url(../images/cyl-right-touxiang2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+/* label 点击后换效果 */
+.team-introduction .control-box .ul-right input[name='check-right']:first-of-type:checked~.controlright label:first-of-type {
+    border: 3px solid #ff3c1d
+}
+
+.team-introduction .control-box .ul-right input[name='check-right']:first-of-type:checked~.controlright label:first-of-type:before {
+    opacity: 0;
+}
+
+.team-introduction .control-box .ul-right input[name='check-right']:nth-of-type(2):checked~.controlright label:nth-of-type(2) {
+    border: 3px solid #ff3c1d
+}
+
+.team-introduction .control-box .ul-right input[name='check-right']:nth-of-type(2):checked~.controlright label:nth-of-type(2):before {
+    opacity: 0;
+}
+
+/* 换图片 */
+.team-introduction .control-box .ul-right input[type='radio']:first-of-type:checked~.lii {
+    transform: translateX(0);
+}
+
+.team-introduction .control-box .ul-right input[type='radio']:nth-of-type(2):checked~.lii {
+    transform: translateX(-1250px);
+
+}
+
+
+/* 旅行回顾 */
+.review {
+    margin: 0 auto;
+}
+
+.review h2 {
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    margin: 40px 0;
+    margin-left: 30px;
+}
+
+.review h2::before {
+    content: '';
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    margin-left: -180px;
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+}
+
+.review h2::after {
+    content: '';
+    position: absolute;
+    top: 27px;
+    right: 50%;
+    margin-right: -180px;
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+}
+
+.review .photowall .photowall-left img,
+.review .photowall .photowall-right img {
+    position: relative;
+    width: 370px;
+    transition: all 0.5s;
+}
+
+.review .photowall .photowall-center img {
+    position: relative;
+    width: 334px;
+    transition: all 0.5s;
+    box-sizing: border-box;
+
+}
+
+.photowall {
+    margin: 0 auto;
+
+}
+
+.review .photowall ul {
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.review .photowall ul li {
+    position: relative;
+    overflow: hidden;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+    transition: all 0.4s;
+}
+
+.review .photowall li i {
+    position: absolute;
+    bottom: 20px;
+    font-size: 16px;
+    left: 20px;
+    color: #fff;
+    visibility: hidden;
+}
+
+.review .photowall li i span {
+    position: relative;
+    font-size: 20px;
+}
+
+.review .photowall li i span::before {
+    content: '\e618';
+    font-family: 'iconfont';
+    font-size: 32px;
+    color: #fff;
+
+}
+
+/* 鼠标进入效果变化 */
+.review .photowall .photowall-center li:hover img {
+    transform: scale(1.1, 1.1);
+}
+
+.review .photowall .photowall-left li:hover img,
+.review .photowall .photowall-right li:hover img {
+    position: relative;
+    transform: scale(1.1, 1.1);
+    z-index: 1;
+}
+
+.review .photowall ul li:hover {
+    border: 4px solid #fff;
+
+}
+
+.review .photowall li:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .3);
+
+    z-index: 2;
+}
+
+.review .photowall li:hover i {
+
+    visibility: visible;
+    z-index: 4;
+}
+
+.review a {
+    display: block;
+    margin: 30px auto;
+    height: 35px;
+    width: 140px;
+    font-size: 16px;
+    line-height: 35px;
+    background-color: #82ba35;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.review a img {
+    margin-left: 10px;
+}
+
+/* 加入我们 */
+.bg {
+    background: #fff;
+    height: 1105px;
+}
+
+.bg .join {
+    text-align: center;
+    border-top: 1px solid transparent;
+}
+
+.bg .join h1 {
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.bg .join h1::before {
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5px;
+    left: 50%;
+    margin-left: -170px;
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+}
+
+.bg .join h1::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5px;
+    right: 50%;
+    margin-right: -170px;
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+}
+
+.bg .join>p {
+    margin: 30px 0;
+}
+
+.bg .join>p a {
+    color: #333;
+}
+
+.bg .join>p a:hover {
+    color: #82ba35;
+}
+
+.bg .join .jobs {
+    width: 1100px;
+    margin-top: 40px;
+}
+
+.bg .join .jobs li {
+    float: left;
+    width: 360px;
+    height: 230px;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    /* border-right: 10px solid red; */
+    box-shadow: 0 0 40px -20px rgba(0 0 0/0.3);
+    transition: all 0.3s;
+}
+
+.bg .join .jobs li:nth-of-type(2) {
+    margin-right: 10px;
+}
+
+.bg .join .jobs li:nth-of-type(1) {
+    margin-right: 10px;
+}
+
+.bg .join .jobs li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.bg .join .jobs li .title {
+    font-size: 20px;
+    padding: 20px 25px;
+    font-weight: 700;
+    color: #333;
+    text-align: left;
+    /*1. 先强制一行内显示文本*/
+    white-space: nowrap;
+    /* （ 默认 normal 自动换行） */
+    /*2. 超出的部分隐藏*/
+    overflow: hidden;
+    /*3. 文字用省略号替代超出的部分*/
+    text-overflow: ellipsis;
+}
+
+.bg .join .jobs li .request {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    padding: 10px 25px;
+}
+
+.posit {
+    position: relative;
+}
+
+.bg .join .jobs li .shizijia {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -55px;
+    margin-left: -30px;
+    width: 60px;
+    height: 110px;
+    font-size: 26px;
+    color: #aaaaaa;
+}
+
+.bg .join .jobs li .shizijia i {
+    display: inline-block;
+    height: 34px;
+    width: 40px;
+
+}
+
+.bg .join .jobs li .shizijia i span {
+    display: inline-block;
+    font-size: 40px;
+    transition: all 0.3s;
+}
+
+.bg .join .jobs li:hover .title {
+    color: #82ba35;
+}
+
+.bg .join .jobs li:hover {
+    transform: translateY(-8px);
+}
+
+.bg .join .jobs .posit:hover .shizijia {
+    color: #82ba35;
+}
+
+.bg .join .jobs a:hover .shizijia .icon-tianjia_huaban {
+    transform: rotate(90deg);
+}
+
+/* 最下方轮播图 */
+.bg .show ul {
+    position: relative;
+    width: 4400px;
+
+    margin-top: 20px;
+}
+
+
+.bg .blocks {
+    height: 500px;
+}
+
+.bg .show ul li img {
+    height: 537px;
+    width: 1100px;
+}
+
+.bg .show ul li {
+    height: 537px;
+    float: left;
+}
+
+/* 轮播radio位置 后续隐藏*/
+.bg .show ul input[name='lunbo']:first-of-type {
+    position: absolute;
+    left: 500px;
+    top: 500px;
+    display: none;
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(2) {
+    position: absolute;
+    left: 510px;
+    top: 500px;
+    display: none;
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(3) {
+    position: absolute;
+    left: 520px;
+    top: 500px;
+    display: none;
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(4) {
+    position: absolute;
+    left: 530px;
+    top: 500px;
+    display: none;
+}
+
+
+/* 底部小点样式 */
+
+
+.bg .show ul .dot {
+    position: absolute;
+    bottom: 30px;
+    left: 25%;
+    margin-left: -614px;
+    width: 128px;
+    height: 30px;
+    /* background-color: pink; */
+    z-index: 5;
+}
+
+.bg .show ul .dot label {
+    float: left;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #fff;
+    margin-left: 13px;
+
+}
+
+/* ridio和label关联 */
+.bg .show ul input[name='lunbo']:nth-of-type(1):checked~.dot label:nth-of-type(1) {
+    background-color: #82ba35;
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(2):checked~.dot label:nth-of-type(2) {
+    background-color: #82ba35;
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(3):checked~.dot label:nth-of-type(3) {
+    background-color: #82ba35;
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(4):checked~.dot label:nth-of-type(4) {
+    background-color: #82ba35;
+}
+
+/* ridio 和图片关联 */
+.bg .show ul input[name='lunbo']:nth-of-type(1):checked~li:nth-of-type(1) {
+    transform: translateX(0px);
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(2):checked~li:nth-of-type(2) {
+    transform: translateX(-1100px);
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(3):checked~li:nth-of-type(3) {
+    transform: translateX(-2200px);
+}
+
+.bg .show ul input[name='lunbo']:nth-of-type(4):checked~li:nth-of-type(4) {
+    transform: translateX(-3300px);
+}
+
+/* 定义动画 */
+@keyframes lunbotu {
+    0% {}
+
+    10% {}
+
+    15% {}
+
+    25% {
+        transform: translateX(-1100px);
+    }
+
+    30% {
+        transform: translateX(-1100px);
+    }
+
+    35% {
+        transform: translateX(-1100px);
+    }
+
+    50% {
+        transform: translateX(-2200px);
+    }
+
+    65% {
+        transform: translateX(-2200px);
+    }
+
+    70% {
+        transform: translateX(-2200px);
+    }
+
+    75% {
+        transform: translateX(-3300px);
+    }
+
+    85% {
+        transform: translateX(-3300px);
+    }
+
+    95% {
+        transform: translateX(-3300px);
+    }
+
+    100% {}
+
+}
+
+.bg .show {
+
+    box-shadow: 0 0 40px -15px rgba(0 0 0/0.3);
+    overflow: hidden;
+}
+
+.bg .show li {
+
+    animation: lunbotu 18s linear 0s infinite;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+感觉上面的关联完全多余了，因为加上自定义动画，小圆点切换失效了。。。两者选其一，后续还是要靠js控制---------------------------------------------------------------------------------------------------------------------------- */
+
+/* 关于我们部分的向下移动的小箭头 */
+.container .movedown {
+    margin-top: 210px;
+
+    height: 30px;
+    background: url(../images/cyl-xiangxia.png) no-repeat center;
+    opacity: 1;
+    /* animation: moved 3s infinite 0s infinite; */
+    animation: moved 1.5s ease 0s infinite;
+}
+
+
+@keyframes moved {
+
+    0% {
+        transform: translateY(0);
+
+    }
+
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+
+
+    }
+}
+
+/* 合作品牌 */
+.brands {
+    height: 450px;
+}
+
+.brands .controlphotos {
+
+    width: 1100px;
+
+}
+
+.brands h1 {
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    margin: 50px 0px 30px 0px;
+}
+
+.brands h1::before {
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5px;
+    right: 50%;
+    margin-right: -170px;
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+}
+
+.brands h1::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5px;
+    left: 50%;
+    margin-left: -170px;
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+}
+
+.brands .controlphotos ul li img {
+    width: 154px;
+    height: 73px;
+    margin-right: 6px;
+}
+
+.brands .controlphotos ul li {
+    float: left;
+}
+
+.brands .controlphotos ul {
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-left: 72px;
+
+}
+
+/* 团队介绍左右箭头，这里就简单摆好位置样式，具体用css原理还是和下方的头像控制切换一样 */
+.arrowhead-prev {
+    background: url(../images/cyl-partner1.png) no-repeat center;
+    position: absolute;
+    width: 35px;
+    height: 69px;
+    top: 50%;
+    margin-top: -85px;
+    left: 20px;
+}
+
+.arrowhead-prev:hover {
+    background: url(../images/cyl-partner11.png) no-repeat center;
+    cursor: pointer;
+}
+.arrowhead-next {
+    background: url(../images/cyl-partner2.png) no-repeat center;
+    position: absolute;
+    width: 35px;
+    height: 69px;
+    top: 50%;
+    margin-top: -85px;
+    right: 29px;
+}
+
+.arrowhead-next:hover {
+    background: url(../images/cyl-partner22.png) no-repeat center;
+    cursor: pointer;
+}
+
+
